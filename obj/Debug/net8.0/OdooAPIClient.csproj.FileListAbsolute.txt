@@ -2,3 +2,17 @@ C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\OdooAPIClient.
 C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\OdooAPIClient.AssemblyInfoInputs.cache
 C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\OdooAPIClient.AssemblyInfo.cs
 C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\OdooAPIClient.csproj.CoreCompileInputs.cache
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\bin\Debug\net8.0\OdooAPIClient.exe
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\bin\Debug\net8.0\OdooAPIClient.deps.json
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\bin\Debug\net8.0\OdooAPIClient.runtimeconfig.json
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\bin\Debug\net8.0\OdooAPIClient.dll
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\bin\Debug\net8.0\OdooAPIClient.pdb
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\bin\Debug\net8.0\PortaCapena.OdooJsonRpcClient.dll
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\OdooAPIClient.csproj.AssemblyReference.cache
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\OdooAPIC.6B5958FD.Up2Date
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\OdooAPIClient.dll
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\refint\OdooAPIClient.dll
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\OdooAPIClient.pdb
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\OdooAPIClient.genruntimeconfig.cache
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\ref\OdooAPIClient.dll

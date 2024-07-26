@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OdooAPIClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10b5a91fd0c27e49ded05a41240fcc0fae81f27c")]
 [assembly: System.Reflection.AssemblyProductAttribute("OdooAPIClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OdooAPIClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,96 +1,68 @@
-﻿using System;
+﻿
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using PortaCapena.OdooJsonRpcClient;
-using Newtonsoft.Json;
-using PortaCapena.OdooJsonRpcClient.Models;
-using PortaCapena.OdooJsonRpcClient.Converters;
-using PortaCapena.OdooJsonRpcClient.Attributes;
+using Newtonsoft.Json.Linq;
 
-namespace OdooIntegration
+namespace OdooRestApiExample
 {
     class Program
     {
         static async Task Main(string[] args)
         {
-            // Configuration
-            var config = new OdooConfig(
-                apiUrl: "https://odoo-api-url.com", // Replace with your Odoo URL
-                dbName: "odoo-db-name",             // Replace with your database name
-                userName: "admin",                  // Replace with your username
-                password: "admin"                   // Replace with your password
-            );
-
-            var odooClient = new OdooClient(config);
-
-            // Check Odoo version
-            var versionResult = await odooClient.GetVersionAsync();
-            Console.WriteLine($"Odoo Version: {versionResult}");
-
-            // Login (optional, handled by OdooClient automatically)
-            var loginResult = await odooClient.LoginAsync();
-            Console.WriteLine($"Login Success: {loginResult}");
-
-            // Get model
-            var tableName = "product.product";
-            var modelResult = await odooClient.GetModelAsync(tableName);
-            Console.WriteLine($"Model Result: {modelResult}");
-
-            var model = OdooModelMapper.GetDotNetModel(tableName, modelResult.Value);
-            Console.WriteLine($"DotNet Model: {model}");
-
-            // CRUD Operations
-            var repository = new OdooRepository<OdooProductProduct>(config);
-
-             // Read
-            var result = await repository.Query().ToListAsync();
-            if (result != null)
+            var config = new OdooConfig
             {
-                // Extracting the data from OdooResult
-                var products = result.Value; // Adjust this based on the actual property name
+                ApiUrl = "http://localhost:8069",
+                DbName = "dsp",
+                UserName = "admin@example.com",
+                Password = "admin1234"
+            };
 
-                Console.WriteLine("Products:");
-                foreach (var product in products)
-                {
-                    Console.WriteLine(JsonConvert.SerializeObject(product, Formatting.Indented));
-                }
+            var odooClient = new OdooApiClient(config);
+
+            // Login
+            var userId = await odooClient.LoginAsync();
+            if (userId == null)
+            {
+                Console.WriteLine("Login failed.");
+                return;
             }
-            else
+            Console.WriteLine("Login successful. User ID: " + userId);
+
+            // Create       
+            // var createValues = new Dictionary<string, object>
+            // {
+            //     { "name", "Company X" },
+            //     { "description", "this is a test" },
+            // };
+            // var createResult = await odooClient.CreateAsync("dsp.company", createValues);
+            // Console.WriteLine("Create result: " + createResult);
+
+            var createValues = new Dictionary<string, object>
             {
-                Console.WriteLine("No data found.");
-            }
-            // Create
-            var createModel = OdooDictionaryModel.Create(() => new OdooProductProduct
-            {
-                DisplayName = "New Product",
-                Price = 99.99
-            });
-            var createResult = await repository.CreateAsync(createModel);
-            Console.WriteLine($"Create Result: {createResult}");
+                { "name", "MR X" },
+                { "position", "Accountant" },
+                {"company_id" , 1}
+            };
+            var createResult = await odooClient.CreateAsync("dsp.employee", createValues);
+            Console.WriteLine("Create result: " + createResult);
+
+            // // Read
+            // var readFields = new[] { "name", "description" };
+            // var readResult = await odooClient.ReadAsync("dsp.company", createResult.Value<int>(), readFields);
+            // Console.WriteLine("Read result: " + readResult);
 
             // Update
-            var updateModel = OdooDictionaryModel.Create(() => new OdooProductProduct
-            {
-                DisplayName = "Updated Product"
-            });
-            var updateResult = await repository.UpdateAsync(updateModel, 1); // Replace with actual ID
-            Console.WriteLine($"Update Result: {updateResult}");
+            // var updateValues = new Dictionary<string, object>
+            // {
+            //     { "name", "esmael"}
+            // };
+            // var updateResult = await odooClient.UpdateAsync("dsp.company", 2, updateValues);
+            // Console.WriteLine("Update result: " + updateResult);
 
-            // Delete
-            var deleteResult = await repository.DeleteAsync(1); // Replace with actual ID
-            Console.WriteLine($"Delete Result: {deleteResult}");
+            // // Delete
+            // var deleteResult = await odooClient.DeleteAsync("dsp.company", 3);
+            // Console.WriteLine("Delete result: " + deleteResult);
         }
-    }
-
-    [OdooTableName("product.product")]
-    public class OdooProductProduct : IOdooModel
-    {
-        [JsonProperty("id")]
-        public long Id { get; set; }
-
-        [JsonProperty("display_name")]
-        public string DisplayName { get; set; }
-
-        [JsonProperty("price")]
-        public double? Price { get; set; }
     }
 }
