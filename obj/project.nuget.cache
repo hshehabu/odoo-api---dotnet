@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "biG01W7hpvU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hamza\\Desktop\\dsp\\odooAPI\\OdooAPIClient\\OdooAPIClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hamza\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\hamza\\.nuget\\packages\\portacapena.odoojsonrpcclient\\1.0.20\\portacapena.odoojsonrpcclient.1.0.20.nupkg.sha512"
+  ],
+  "logs": []
+}

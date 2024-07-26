@@ -1,0 +1,4 @@
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\OdooAPIClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\OdooAPIClient.AssemblyInfoInputs.cache
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\OdooAPIClient.AssemblyInfo.cs
+C:\Users\hamza\Desktop\dsp\odooAPI\OdooAPIClient\obj\Debug\net8.0\OdooAPIClient.csproj.CoreCompileInputs.cache
